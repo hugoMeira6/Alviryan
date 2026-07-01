@@ -1,0 +1,16 @@
+/* Regras aplicadas apenas para telas de até 768px (Celulares e Tablets verticais) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;          /* Ocupa a largura total da tela */
+        height: auto;         /* Altura se adapta ao conteúdo */
+        position: relative;   /* Sai da posição fixa lateral */
+        flex-direction: row;  /* Itens ficam um ao lado do outro, se necessário */
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    /* Se você tiver uma logo ou título grande na sidebar, reduza ou esconda no celular */
+    .sidebar-logo {
+        display: none; 
+    }
+}

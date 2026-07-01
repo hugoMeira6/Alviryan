@@ -473,3 +473,59 @@ header p{
     pointer-events:none;
 
 }
+
+/* =======================================================
+   RESPONSIVIDADE: ALVIRYAN
+   ======================================================= */
+@media (max-width: 768px) {
+    /* Libera o corpo para rolar a página verticalmente */
+    body {
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* Transforma o contêiner principal de "lado a lado" para "um em cima do outro" */
+    #app {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    /* Transforma a sidebar lateral em um menu de topo */
+    #sidebar {
+        width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    /* Esconde a logo ou diminui o padding para economizar espaço no celular */
+    .logo {
+        padding: 20px !important;
+    }
+    
+    .logo h1 {
+        font-size: 28px !important;
+    }
+
+    /* Otimiza a lista de navegação para toque */
+    nav li {
+        padding: 15px 20px !important;
+    }
+
+    /* Garante que o conteúdo principal ocupe a tela toda */
+    #content {
+        width: 100% !important;
+    }
+
+    header {
+        padding: 20px !important;
+    }
+    
+    header h1 {
+        font-size: 28px !important;
+    }
+
+    #module-container {
+        padding: 20px !important;
+    }
+}

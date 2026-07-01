@@ -227,3 +227,44 @@ overflow:hidden;
 
 }
 
+/* =========================================
+   RESPONSIVIDADE: COMPONENTES GERAIS
+   ========================================= */
+@media (max-width: 768px) {
+    /* Ajusta os painéis para não espremerem a tela */
+    .panel {
+        padding: 16px !important;    /* Reduz o espaçamento interno no celular */
+        border-radius: 14px;
+    }
+
+    /* Reduz o tamanho dos títulos para caberem em uma linha só */
+    .panel-title {
+        margin-bottom: 20px;
+    }
+
+    .panel-title h1 {
+        font-size: 26px !important;  /* Diminui de 38px para 26px para não quebrar */
+    }
+
+    .panel-title p {
+        font-size: 14px;
+    }
+
+    /* Botões e Inputs mais fáceis de tocar no celular */
+    .alviryan-button, .alviryan-input {
+        padding: 12px 20px !important; /* Ajusta a área de clique */
+        font-size: 16px !important;    /* Garante boa leitura sem zoom forçado */
+        width: 100%;                  /* Faz botões/inputs ocuparem a largura total da caixinha */
+        box-sizing: border-box;
+    }
+
+    /* Ajusta os Toasts (notificações) para o centro inferior da tela */
+    .toast {
+        bottom: 15px !important;
+        right: 15px !important;
+        left: 15px !important;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
