@@ -1,0 +1,721 @@
+.dice-module{
+
+    display:grid;
+
+    grid-template-columns:
+
+        2fr
+        1fr;
+
+    gap:35px;
+
+}
+
+.dice-panel{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40,32,22,.96),
+            rgba(26,20,14,.96)
+        );
+
+    border:2px solid rgba(181,140,69,.35);
+
+    border-radius:22px;
+
+    padding:48px;
+
+    box-shadow:
+        0 0 60px rgba(0,0,0,.55),
+        inset 0 0 35px rgba(255,220,150,.02);
+
+    backdrop-filter:blur(5px);
+
+}
+
+.dice-panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:1px solid rgba(255,220,170,.06);
+
+    border-radius:16px;
+
+    pointer-events:none;
+
+}
+
+.dice-panel::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        radial-gradient(
+
+            circle at top,
+
+            rgba(255,220,120,.05),
+
+            transparent 60%
+
+        );
+
+    pointer-events:none;
+
+}
+
+.panel-title h1{
+
+    font-family:"Cinzel";
+
+    color:var(--primary-light);
+
+    font-size:42px;
+
+}
+
+.panel-title p{
+
+    margin-top:10px;
+
+    color:var(--text-secondary);
+
+}
+
+.attribute-section{
+
+    margin-top:40px;
+
+}
+
+.attribute-section label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+}
+
+.attribute-section input{
+
+    width:180px;
+
+    font-size:30px;
+
+    padding:15px;
+
+    background:#202020;
+
+    color:white;
+
+    border:none;
+
+    border-radius:15px;
+
+}
+
+.dice-display{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
+.dice-display span{
+
+    color:#999;
+
+}
+
+.dice-display h2{
+
+    font-size:85px;
+
+    color:var(--primary);
+
+    font-family:"Cinzel";
+
+    margin-top:10px;
+
+}
+
+#roll-button{
+
+    width:100%;
+
+    margin-top:45px;
+
+    padding:20px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    color:#efe6d5;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #b48a42,
+            #78551d
+        );
+
+    transition:.25s;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.18),
+
+        0 10px 30px rgba(0,0,0,.45);
+
+}
+
+#roll-button:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.05);
+
+}
+
+#roll-button:active{
+
+    transform:translateY(3px);
+
+}
+
+.result-box{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
+.result-box span{
+
+    color:#999;
+
+}
+
+.result-box h1{
+
+    margin-top:10px;
+
+    font-size:90px;
+
+    font-family:"Cinzel";
+
+    color:var(--primary-light);
+
+}
+
+.history-panel{
+
+    background:
+
+    rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.06);
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+.history-panel h2{
+
+    font-family:"Cinzel";
+
+    margin-bottom:20px;
+
+}
+
+#history-list{
+
+    color:#aaa;
+
+}
+
+.panel-title{
+
+    position:relative;
+
+    padding-bottom:20px;
+
+    margin-bottom:35px;
+
+}
+
+.panel-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:140px;
+
+    height:2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--primary),
+            transparent
+        );
+
+}
+
+.arcane-table{
+
+    margin-top:45px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:45px;
+
+    align-items:center;
+
+}
+
+.attribute-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.attribute-area label{
+
+    font-size:15px;
+
+    color:var(--text-secondary);
+
+}
+
+.attribute-area input{
+
+    margin-top:12px;
+
+    width:180px;
+
+    padding:16px;
+
+    font-size:30px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#1a1a1a;
+
+    color:white;
+
+}
+
+.attribute-area span{
+
+    margin-top:35px;
+
+    color:#9f9f9f;
+
+}
+
+.attribute-area h2{
+
+    margin-top:8px;
+
+    font-size:64px;
+
+    color:var(--primary-light);
+
+    font-family:"Cinzel";
+
+}
+
+.dice-circle{
+
+    width:320px;
+
+    height:320px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(180,138,66,.18),
+
+            rgba(20,20,20,1)
+
+        );
+
+    border:2px solid rgba(180,138,66,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    box-shadow:
+
+        0 0 45px rgba(0,0,0,.45);
+
+        animation:
+
+    rotateCircle 60s linear infinite;
+
+}
+
+.dice-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.inner-circle{
+
+    width:210px;
+
+    height:210px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,255,255,.05),
+
+            rgba(0,0,0,.2)
+
+        );
+
+}
+
+#result{
+
+    position:relative;
+
+    z-index:2;
+
+    font-family:"Cinzel";
+
+    font-size:92px;
+
+    color:var(--primary-light);
+
+    text-shadow:
+
+        0 0 15px rgba(181,140,69,.35);
+
+    transition:
+
+        transform .25s ease,
+        color .25s ease,
+        text-shadow .25s ease;
+
+}
+
+.side-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.history-panel,
+.stats-panel{
+
+    background:
+
+    rgba(255,255,255,.03);
+
+    border-radius:18px;
+
+    padding:28px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+.stat{
+
+    margin-top:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.stat strong{
+
+    color:var(--primary-light);
+
+}
+
+/*======================================================
+    NÚCLEO ARCANO
+======================================================*/
+
+.arcane-core{
+
+    position:relative;
+
+    width:180px;
+
+    height:180px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.arcane-glow{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(181,140,69,.28),
+
+        rgba(181,140,69,.08),
+
+        transparent 70%
+
+    );
+
+    animation:
+
+        arcanePulse 5s infinite ease-in-out;
+
+}
+
+.history-item{
+
+    margin-top:12px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.04);
+
+    transition:.25s;
+
+}
+
+.history-item:hover{
+
+    background:rgba(180,138,66,.12);
+
+}
+
+.placeholder{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+    gap:20px;
+
+    text-align:center;
+
+}
+
+.placeholder h1{
+
+    font-size:42px;
+
+    color:var(--primary-light);
+
+    font-family:"Cinzel";
+
+}
+
+.placeholder p{
+
+    color:var(--text-secondary);
+
+    max-width:500px;
+
+}
+
+.dice-circle.rolling{
+
+    animation:
+
+        rotateCircle 1.8s linear infinite,
+
+        diceGlow 1s ease infinite;
+
+}
+
+#result.impact{
+
+    animation:
+
+        resultImpact .35s ease;
+
+}
+
+.history-item{
+
+    animation:
+
+        historyAppear .35s ease;
+
+}
+
+.stat strong{
+
+    transition:.25s;
+}
+
+.history-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.history-item strong{
+
+    color:var(--primary-light);
+
+    font-size:20px;
+
+}
+
+.history-item span{
+
+    opacity:.55;
+
+    font-size:13px;
+
+}
+
+#module-container{
+
+    animation:pageFade .35s ease;
+
+}
+
+.panel{
+
+    animation:fadeUp .45s ease;
+
+}
+
+.side-panel{
+
+    animation:fadeLeft .5s ease;
+
+}
+
+.history-panel{
+
+    animation-delay:.10s;
+
+    animation-fill-mode:backwards;
+
+}
+
+.stats-panel{
+
+    animation-delay:.20s;
+
+    animation-fill-mode:backwards;
+
+}

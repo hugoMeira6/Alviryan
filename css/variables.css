@@ -1,0 +1,88 @@
+/* =====================================================
+   ALVIRYAN
+   Variáveis Globais
+===================================================== */
+
+:root{
+
+    /* ======== CORES PRINCIPAIS ======== */
+
+    --background:#141414;
+
+    --background-light:#1d1d1d;
+
+    --sidebar:#101010;
+
+    --panel:#222222;
+
+    --card:#2b2b2b;
+
+
+
+    /* ======== CORES DE DESTAQUE ======== */
+
+    --primary:#b48a42;
+
+    --primary-dark:#8f6a2d;
+
+    --primary-light:#d8b36d;
+
+
+
+    /* ======== TEXTO ======== */
+
+    --text:#f3f0e8;
+
+    --text-secondary:#bdb7aa;
+
+    --text-dark:#8d8d8d;
+
+
+
+    /* ======== STATUS ======== */
+
+    --success:#4ca56d;
+
+    --danger:#c84d4d;
+
+    --warning:#cfa542;
+
+
+
+    /* ======== BORDAS ======== */
+
+    --border:#3a3a3a;
+
+    --border-light:#5a5a5a;
+
+
+
+    /* ======== SOMBRAS ======== */
+
+    --shadow:
+
+        0px 10px 30px rgba(0,0,0,.45);
+
+
+
+    --shadow-hover:
+
+        0px 18px 40px rgba(0,0,0,.65);
+
+
+
+    /* ======== TRANSIÇÕES ======== */
+
+    --transition:.25s ease;
+
+
+
+    /* ======== TAMANHOS ======== */
+
+    --sidebar-width:290px;
+
+    --header-height:90px;
+
+    --radius:16px;
+
+}

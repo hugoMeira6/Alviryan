@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configurações básicas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alviryan</title>
+
+    <!-- Ícone do aplicativo -->
+    <link rel="icon" href="assets/logos/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/components.css">
+  </head>
+
+  <body>
+    <!-- ===================================================== -->
+    <!-- TELA DE CARREGAMENTO (será usada futuramente) -->
+    <!-- ===================================================== -->
+
+    <div id="loading-screen">
+      
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- APLICATIVO -->
+    <!-- ===================================================== -->
+
+    <div id="app">
+      <!-- ====================================== -->
+      <!-- SIDEBAR -->
+      <!-- ====================================== -->
+
+      <aside id="sidebar">
+        <!-- Logo -->
+
+        <div class="logo">
+          <h1>ALVIRYAN</h1>
+
+          <span>O site oficial</span>
+        </div>
+
+        <!-- Navegação -->
+
+        <nav>
+          <ul>
+            <li class="selected" data-module="dice">Rolagem de Dados</li>
+
+            <li data-module="calculator">Calculadora de Combate</li>
+
+            <li data-module="herbarium">Herbário</li>
+
+            <li data-module="bestiary">Bestiário</li>
+
+            <li data-module="npcs">NPCs</li>
+
+            <li data-module="contracts">Contratos</li>
+
+            <li data-module="settings">Configurações</li>
+          </ul>
+        </nav>
+
+        <!-- Rodapé -->
+
+        <footer>
+          <p>Versão Beta 0.2.0</p>
+        </footer>
+      </aside>
+
+      <!-- ====================================== -->
+      <!-- CONTEÚDO PRINCIPAL -->
+      <!-- ====================================== -->
+
+      <main id="content">
+        <!-- Banner Superior -->
+
+        <!-- Área onde cada módulo será carregado -->
+
+        <section id="module-container">
+          <!--
+
+                Aqui futuramente o JavaScript irá carregar
+                automaticamente os módulos.
+
+                Exemplo:
+
+                modules/dice/index.html
+
+                -->
+        </section>
+      </main>
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================================== -->
+
+    <script type="module" src="js/main.js"></script>
+
+    <div class="glow" style="top: -180px; left: -150px"></div>
+
+    <div class="glow" style="bottom: -220px; right: -180px"></div>
+  </body>
+</html>

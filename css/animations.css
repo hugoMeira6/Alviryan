@@ -1,0 +1,234 @@
+/*======================================================
+    ARCANE PULSE
+======================================================*/
+
+@keyframes arcanePulse{
+
+    0%{
+
+        transform:scale(.96);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.96);
+
+        opacity:.55;
+
+    }
+
+}
+
+/*======================================================
+    RESULTADO
+======================================================*/
+
+@keyframes resultImpact{
+
+    0%{
+
+        transform:scale(.7);
+
+    }
+
+    50%{
+
+        transform:scale(1.18);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*======================================================
+    ROTAÇÃO ARCANA
+======================================================*/
+
+@keyframes rotateCircle{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes diceGlow{
+
+    0%{
+
+        box-shadow:
+        0 0 15px rgba(181,140,69,.20);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 55px rgba(181,140,69,.65);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 15px rgba(181,140,69,.20);
+
+    }
+
+}
+
+@keyframes historyAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes statFlash{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.18);
+
+        color:#f5d17b;
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================================
+FADE UP
+=========================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================
+FADE LEFT
+=========================================*/
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+        transform:translateX(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+
+/*=========================================
+PAGE FADE
+=========================================*/
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*=========================================
+BUTTON RIPPLE
+=========================================*/
+
+@keyframes ripple{
+
+    from{
+
+        transform:scale(0);
+
+        opacity:.45;
+
+    }
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+
+    }
+
+}
