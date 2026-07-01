@@ -1,626 +1,123 @@
 /*======================================================
-    ALVIRYAN
-    Estilo Global
+    ALVIRYAN - Estilo Global
 ======================================================*/
-
-/* Google Fonts (temporário) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-/* RESET */
+/* RESET E BASE */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    background: #0d0c0a;
 }
 
-html{
-
-    scroll-behavior:smooth;
-
+/* BACKGROUNDS */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(7,6,5,.70), rgba(12,10,8,.88)), url("../assets/backgrounds/library.webp");
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(.55) saturate(.75);
+    transform: scale(1.08);
+    z-index: -3;
+}
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, transparent 20%, rgba(0,0,0,.55) 100%);
+    pointer-events: none;
+    z-index: -2;
 }
 
-body{
+/* APP E LAYOUT */
+#app { display: flex; width: 100%; height: 100vh; }
 
-    width:100%;
-    height:100vh;
-
-    overflow:hidden;
-
-    color:var(--text);
-
-    font-family:'Inter',sans-serif;
-
-    position:relative;
-
-    background:#0d0c0a;
-
-}
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-        linear-gradient(
-            rgba(7,6,5,.70),
-            rgba(12,10,8,.88)
-        ),
-
-        url("../assets/backgrounds/library.webp");
-
-    background-size:cover;
-
-    background-position:center;
-
-    filter:
-
-        blur(5px)
-
-        brightness(.55)
-
-        saturate(.75);
-
-    transform:scale(1.08);
-
-    z-index:-3;
-
-}
-
-body::after{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(
-
-            circle,
-
-            transparent 20%,
-
-            rgba(0,0,0,.55) 100%
-
-        );
-
-    pointer-events:none;
-
-    z-index:-2;
-
-}
-
-
-/*======================================================
-    APP
-======================================================*/
-
-#app{
-
-    display:flex;
-
-    width:100%;
-
-    height:100vh;
-
-}
-
-
-/*======================================================
-    SIDEBAR
-======================================================*/
-
-#sidebar{
-
-    width:var(--sidebar-width);
-
-   background:
-
-rgba(14,13,11,.82);
-
-backdrop-filter:
-
-blur(14px);
-
--webkit-backdrop-filter:
-
-blur(14px);
-
-    border-right:1px solid rgba(255,255,255,.05);
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    box-shadow:
-
-        10px 0 40px rgba(0,0,0,.35);
-
-}
-
-
-/*======================================================
-    LOGO
-======================================================*/
-
-.logo{
-
-    padding:42px 30px;
-
-    text-align:center;
-
-}
-
-.logo h1{
-
-    font-size:38px;
-
-    color:var(--primary-light);
-
-    text-shadow:
-
-        0 0 18px rgba(180,138,66,.25);
-
-}
-
-.logo span{
-
-    opacity:.7;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-}
-
-
-/*======================================================
-    MENU
-======================================================*/
-
-nav{
-
-    padding-top:20px;
-
-}
-
-nav ul{
-
-    list-style:none;
-
-}
-
-nav li{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:18px 28px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-    position:relative;
-
-    transition:
-
-background .25s,
-
-padding-left .25s,
-
-color .25s;
-
-nav li:hover{
-
-    padding-left:28px;
-
-}
-
-}
-
-nav li::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    width:4px;
-
-    height:0%;
-
-    background:var(--primary);
-
-    transition:.25s;
-
-}
-
-nav li:hover{
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        rgba(180,138,66,.10),
-
-        transparent
-
-    );
-
-}
-
-nav li:hover::before{
-
-    height:100%;
-
-}
-
-nav li.selected{
-
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        rgba(180,138,66,.22),
-
-        rgba(255,255,255,.01)
-
-    );
-
-}
-
-nav li.selected::before{
-
-    height:100%;
-
-}
-
-.icon{
-
-    width:24px;
-
-    text-align:center;
-
-    font-size:18px;
-
-    opacity:.9;
-
-}
-
-.text{
-
-    font-size:15px;
-
-    letter-spacing:.4px;
-
-}
-
-
-/*======================================================
-    FOOTER
-======================================================*/
-
-footer{
-
-    padding:25px;
-
-    border-top:
-
-    1px solid rgba(255,255,255,.05);
-
-    color:#777;
-
-    font-size:13px;
-
-}
-
-
-/*======================================================
-    CONTENT
-======================================================*/
-
-#content{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-
-/*======================================================
-    HEADER
-======================================================*/
-
-header{
-
-    padding:40px 50px;
-
-    border-bottom:
-
-    1px solid rgba(255,255,255,.05);
-
-    background:
-
-    rgba(255,255,255,.02);
-
-    backdrop-filter:blur(10px);
-
-}
-
-header h1{
-
-    font-family:'Cinzel',serif;
-
-    font-size:40px;
-
-    color:var(--primary-light);
-
-}
-
-header p{
-
-    margin-top:10px;
-
-    color:var(--text-secondary);
-
-}
-
-
-/*======================================================
-    MÓDULO
-======================================================*/
-
-#module-container{
-
-    flex:1;
-
-    padding:40px;
-
-    overflow:auto;
-
-}
-
-
-/*======================================================
-    SCROLL
-======================================================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#141414;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#474747;
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:var(--primary);
-
-}
-
-
-/*======================================================
-    SELEÇÃO
-======================================================*/
-
-::selection{
-
-    background:var(--primary);
-
-    color:black;
-
-}
-
-.glow{
-
-    position:absolute;
-
-    width:500px;
-
-    height:500px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-
-            circle,
-
-            rgba(180,138,66,.08),
-
-            transparent
-
-        );
-
-    filter:blur(100px);
-
-    pointer-events:none;
-
-}
-
-/* =======================================================
-   RESPONSIVIDADE: ALVIRYAN
-   ======================================================= */
-/* =======================================================
-   RESPONSIVIDADE FORÇADA (MOBILE)
-   ======================================================= */
-@media screen and (max-width: 768px) {
-    /* 1. Impede o site de ficar "zoomado" */
-    body {
-        overflow-x: hidden !important; /* Remove barra de rolagem lateral */
-        height: auto !important;
-    }
-
-    /* 2. Força o app a virar uma coluna */
-    #app {
-        flex-direction: column !important;
-        height: auto !important;
-    }
-
-    /* 3. Sidebar vira topo */
-    #sidebar {
-        width: 100% !important;
-        height: auto !important;
-        border-right: none !important;
-        border-bottom: 2px solid rgba(181,140,69,.3); /* Linha divisória */
-        flex-direction: row !important; /* Se quiser ícones lado a lado no topo */
-        justify-content: space-around !important;
-        padding: 10px !important;
-    }
-
-    /* 4. Conteúdo ocupa a tela toda */
-    #content {
-        width: 100% !important;
-        flex: none !important;
-    }
-
-    /* 5. Ajuste fino de padding para dar "ar" ao layout */
-    #module-container {
-        padding: 15px !important;
-    }
-
-    /* COMPACTAÇÃO DO MENU PARA MOBILE */
 #sidebar {
-    padding: 10px 5px !important;
+    width: var(--sidebar-width);
+    background: rgba(14,13,11,.82);
+    backdrop-filter: blur(14px);
+    border-right: 1px solid rgba(255,255,255,.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 10px 0 40px rgba(0,0,0,.35);
 }
 
-.logo {
-    display: none !important; /* Esconde a logo no celular para ganhar espaço */
-}
+/* LOGO E MENU */
+.logo { padding: 42px 30px; text-align: center; }
+.logo h1 { font-size: 38px; color: var(--primary-light); text-shadow: 0 0 18px rgba(180,138,66,.25); }
+.logo span { opacity: .7; letter-spacing: 3px; text-transform: uppercase; }
 
-nav {
-    padding: 0 !important;
-}
+nav { padding-top: 20px; }
+nav ul { list-style: none; }
+nav li { display: flex; align-items: center; gap: 18px; padding: 18px 28px; cursor: pointer; transition: .25s; position: relative; }
+nav li:hover { background: linear-gradient(90deg, rgba(180,138,66,.10), transparent); }
+nav li::before { content: ""; position: absolute; left: 0; width: 4px; height: 0%; background: var(--primary); transition: .25s; }
+nav li:hover::before { height: 100%; }
+nav li.selected { background: linear-gradient(90deg, rgba(180,138,66,.22), rgba(255,255,255,.01)); }
+nav li.selected::before { height: 100%; }
 
-nav ul {
-    display: flex !important;           /* Transforma a lista em linha */
-    flex-wrap: wrap !important;         /* Permite quebrar linha se necessário */
-    justify-content: center !important;
-    gap: 10px !important;
-}
+.icon { width: 24px; text-align: center; font-size: 18px; opacity: .9; }
+.text { font-size: 15px; letter-spacing: .4px; }
 
-nav li {
-    padding: 8px 12px !important;       /* Diminui o botão */
-    font-size: 13px !important;         /* Fonte menor */
-    border-radius: 8px;
-    background: rgba(255,255,255,.05);  /* Fundo sutil para destacar o botão */
-    border: none !important;            /* Remove o traço lateral do desktop */
-}
+/* CONTEÚDO */
+#content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+header { padding: 40px 50px; border-bottom: 1px solid rgba(255,255,255,.05); background: rgba(255,255,255,.02); backdrop-filter: blur(10px); }
+header h1 { font-family: 'Cinzel', serif; font-size: 40px; color: var(--primary-light); }
+#module-container { flex: 1; padding: 40px; overflow: auto; }
 
-/* Esconde ícones se necessário ou ajusta o tamanho */
-.icon {
-    display: none !important;           /* Opcional: esconde ícone para ficar só texto */
-}
-
-/* Ajuste para não cortar a esfera de brilho e efeitos */
-    #module-container {
-        padding-bottom: 60px !important; /* Dá um espaço extra embaixo para a esfera aparecer */
-        overflow-y: auto !important;     /* Garante que o scroll vertical continue funcionando */
-        overflow-x: hidden !important;   /* Evita que a esfera crie barra de rolagem horizontal */
-    }
-
-    /* Garante que o painel principal aceite elementos "transbordando" sem cortar */
-    .panel, .dice-container {
-        position: relative !important;   /* Necessário para manter o brilho dentro do painel */
-        overflow: visible !important;    /* Permite que a esfera apareça mesmo que passe um pouco da borda */
-    }
-
-    /* 1. Libera o container geral para crescer verticalmente */
-    #app {
-        height: auto !important; /* Para de travar em 100vh */
-        min-height: 100vh !important; /* Garante que preencha a tela se tiver pouco conteúdo */
-        display: block !important; /* Muda de flex para block para permitir rolagem fluida */
-    }
-
-    /* 2. Permite que o módulo (onde fica o histórico/estatísticas) role */
-    #module-container {
-        height: auto !important;
-        overflow-y: visible !important; /* O conteúdo não será cortado */
-        padding-bottom: 80px !important; /* Espaço extra para o rodapé */
-    }
-
-    /* 3. Ajuste se o histórico estiver dentro da sidebar (menu superior) */
-    #sidebar {
-        position: sticky !important; /* Se quiser que o menu fique no topo ao rolar */
-        top: 0 !important;
-        z-index: 100 !important;
-        max-height: 30vh !important; /* Garante que o menu não ocupe a tela toda */
-        overflow-y: auto !important; /* Permite rolar apenas o menu se ele for grande */
-    }
-
-    #module-container {
-        margin: 0 10px !important; /* Adiciona uma pequena margem lateral no celular */
-    }
-}
+/* UTILS */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #141414; }
+::-webkit-scrollbar-thumb { background: #474747; border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+::selection { background: var(--primary); color: black; }
 
 /* =======================================================
-   RESET TOTAL DE EMERGÊNCIA PARA MOBILE
+   RESPONSIVIDADE (MOBILE)
    ======================================================= */
 @media (max-width: 768px) {
-    /* 1. Libera o Body e HTML para desenhar a página toda */
-    body, html {
-        overflow: visible !important; /* Para de esconder o conteúdo */
-        width: 100% !important;
-        height: auto !important;
-        min-height: 100vh !important;
-        position: static !important; /* Remove posicionamento fixo do corpo */
+    body { height: auto; overflow: auto; }
+    
+    #app { flex-direction: column; height: auto; min-height: 100vh; }
+    
+    #sidebar { 
+        width: 100%; 
+        height: auto; 
+        border-right: none; 
+        border-bottom: 1px solid rgba(181,140,69,.3);
+        flex-direction: column; 
     }
 
-    /* 2. Remove o background fixo que pode estar atrapalhando o scroll */
-    body::before, body::after {
-        position: absolute !important; /* Muda de fixed para absolute */
-        height: 100% !important;
-    }
+    .logo { display: none; } /* Escondemos a logo para liberar espaço */
 
-    /* 3. Força todos os containers a expandirem para mostrar o conteúdo */
-    #app, #content, #sidebar, #module-container {
-        display: block !important;    /* Sai de flex para block */
-        width: 100% !important;
-        height: auto !important;      /* Libera a altura */
-        overflow: visible !important; /* O que faz o conteúdo não cortar */
-        flex: none !important;
-        position: static !important;
+    nav ul { 
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        padding: 10px;
     }
+    
+    nav li { padding: 10px 15px; }
+    .icon { display: none; } /* Esconde ícones no celular para reduzir poluição */
 
-    /* 4. Corrige qualquer elemento que esteja forçando largura extra */
-    * {
-        max-width: 100vw !important; /* Nenhum elemento pode ser maior que a tela */
-        box-sizing: border-box !important;
-    }
+    #content { width: 100%; height: auto; }
+    
+    header { padding: 20px; text-align: center; }
+    header h1 { font-size: 24px; }
+
+    #module-container { padding: 15px; }
+
+    /* Força os cards a respeitarem a largura da tela */
+    .panel { width: 100%; box-sizing: border-box; }
 }
