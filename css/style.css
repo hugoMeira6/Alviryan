@@ -85,6 +85,9 @@ header h1 { font-family: 'Cinzel', serif; font-size: 40px; color: var(--primary-
 /* =======================================================
    RESPONSIVIDADE (MOBILE)
    ======================================================= */
+/* =======================================================
+   RESPONSIVIDADE DEFINITIVA (MOBILE)
+   ======================================================= */
 @media (max-width: 768px) {
     body { height: auto; overflow: auto; }
     
@@ -98,7 +101,7 @@ header h1 { font-family: 'Cinzel', serif; font-size: 40px; color: var(--primary-
         flex-direction: column; 
     }
 
-    .logo { display: none; } /* Escondemos a logo para liberar espaço */
+    .logo { display: none; }
 
     nav ul { 
         display: flex; 
@@ -107,17 +110,50 @@ header h1 { font-family: 'Cinzel', serif; font-size: 40px; color: var(--primary-
         justify-content: center; 
         padding: 10px;
     }
-    
     nav li { padding: 10px 15px; }
-    .icon { display: none; } /* Esconde ícones no celular para reduzir poluição */
+    .icon { display: none; }
 
     #content { width: 100%; height: auto; }
-    
     header { padding: 20px; text-align: center; }
     header h1 { font-size: 24px; }
 
     #module-container { padding: 15px; }
 
-    /* Força os cards a respeitarem a largura da tela */
-    .panel { width: 100%; box-sizing: border-box; }
+    /* --- CORREÇÃO ESPECÍFICA DO MÓDULO DE DADOS --- */
+    .dice-module {
+        display: flex !important;
+        flex-direction: column !important; /* Empilha a mesa de dados e a barra lateral */
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    .dice-panel, .side-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+    }
+
+    /* Empilha o Atributo e o Círculo do Dado caso fiquem espremidos lateralmente */
+    .arcane-table {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    .attribute-area {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .panel, .history-panel, .stats-panel {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Transição suave para o número se ajustar a 0 graus ao parar */
+    #result {
+        transition: transform 0.25s ease-out;
+    }
 }
